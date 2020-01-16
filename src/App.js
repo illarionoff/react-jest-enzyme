@@ -6,7 +6,7 @@ import GuessedWords from "./GuessedWords";
 
 function App() {
   return (
-    <div className="App">
+    <div data-test="component-app" className="App">
       <Congrats success={true} />
       <GuessedWords
         guessedWords={[
