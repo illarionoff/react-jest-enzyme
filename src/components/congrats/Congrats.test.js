@@ -1,7 +1,7 @@
 import React from "react";
 import { shallow } from "enzyme";
 
-import { findByTextAttr, checkProps } from "../test/testUtils";
+import { findByTextAttr, checkProps } from "../../../test/testUtils";
 import Congrats from "./Congrats";
 
 const defaulProps = { success: false };

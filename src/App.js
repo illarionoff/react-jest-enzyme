@@ -1,8 +1,8 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Congrats from "./Congrats";
-import GuessedWords from "./GuessedWords";
+import Congrats from "./components/congrats/Congrats";
+import GuessedWords from "./components/guessedWords/GuessedWords";
 
 function App() {
   return (
