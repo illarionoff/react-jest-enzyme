@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 
 class Input extends Component {
   render() {
-    const contents = this.props.success ? null : (
+    const contents = this.props.success ? (
+      <div></div>
+    ) : (
       <form>
         <input id="word-guess" type="text" data-test="input-box" />
         <button data-test="button-submit" type="submit">
