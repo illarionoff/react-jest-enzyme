@@ -11,8 +11,6 @@ const setup = (initialState = {}) => {
   return wrapper;
 };
 
-setup();
-
 describe("render", () => {
   describe("word has not been guessed", () => {
     let wrapper;
