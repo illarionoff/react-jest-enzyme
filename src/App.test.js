@@ -45,8 +45,13 @@ test("has success state as props", () => {
 
 test("getSecretWord runs on App mount", () => {
   const getSecretWordMock = jest.fn();
+  const props = {
+    getSecretWord: getSecretWordMock,
+    success: true,
+    guessedWords: []
+  };
 
-  const wrapper = shallow(<UnconnectedApp getSecretWord={getSecretWordMock} />);
+  const wrapper = shallow(<UnconnectedApp {...props} />);
   wrapper.instance().componentDidMount();
 
   const getSecretWordCallCount = getSecretWordMock.mock.calls.length;
