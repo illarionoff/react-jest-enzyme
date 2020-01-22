@@ -1,6 +1,6 @@
 import React from "react";
 import { shallow } from "enzyme";
-import App from "./App";
+import App, { UnconnectedApp } from "./App";
 
 import { findByTextAttr, storeFactory } from "../test/testUtils";
 
@@ -41,4 +41,14 @@ test("has success state as props", () => {
   const wrapper = setup();
   const getSecretWord = wrapper.instance().props.getSecretWord;
   expect(getSecretWord).toBeInstanceOf(Function);
+});
+
+test("getSecretWord runs on App mount", () => {
+  const getSecretWordMock = jest.fn();
+
+  const wrapper = shallow(<UnconnectedApp getSecretWord={getSecretWordMock} />);
+  wrapper.instance().componentDidMount();
+
+  const getSecretWordCallCount = getSecretWordMock.mock.calls.length;
+  expect(getSecretWordCallCount).toBe(1);
 });
