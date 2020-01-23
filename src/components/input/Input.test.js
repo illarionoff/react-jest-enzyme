@@ -93,4 +93,8 @@ describe("guessWord action creator call", () => {
     const guessedWordArg = guessWordMock.mock.calls[0][0];
     expect(guessedWordArg).toBe(guessedWord);
   });
+
+  test("clears input after calling submit action", () => {
+    expect(wrapper.instance().inputBox.current.value).toBe("");
+  });
 });
